@@ -1,0 +1,43 @@
+// bower:scss
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "bower_components/bitters/app/assets/stylesheets/_base.scss";
+@import "bower_components/neat/app/assets/stylesheets/_neat.scss";
+// endbower
+
+// base
+@import "base/vars";
+@import "base/typography";
+@import "base/fonts";
+@import "base/body-element";
+@import "base/example-buttons";
+@import "base/links";
+@import "base/selection-colors";
+@import "base/animate";
+@import "base/audio-elements";
+
+// layouts
+@import "layouts/full-page-article";
+@import "layouts/containers";
+
+
+// modules
+@import "modules/mainHeader";
+@import "modules/hero";
+@import "modules/footer";
+@import "modules/feature";
+@import "modules/cards";
+@import "modules/tabs";
+@import "modules/flashes";
+@import "modules/article";
+@import "modules/contact-map";
+@import "modules/blockquotes";
+@import "modules/accordion";
+
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

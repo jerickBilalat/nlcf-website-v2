@@ -1,0 +1,20 @@
+.page-article {
+  & h1, h2, h3, h4, h5, h6 {
+    // font-family: Georgia, Arial, Times;
+    color: #333;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  .primary-heading {
+
+    font-size: 2.5em;
+  }
+  .secondary-heading {
+    font-size: 2.1em;
+  }
+  p {
+    @include media(480px) {
+      font-size: 1.2em;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.content-wrapper {
+	min-width: 320px;
+	padding: 0 10px;
+}
+
+// this container should be inside content-wrapper
+.inline-container {
+	// better grid framework can be used if it gets complicated
+	max-width: 100%;
+	padding: 0 10px;
+
+	& .inline-col {
+		display: inline-block;
+		vertical-align: top;
+		// separete code in the furture for 3 to 4 inline columns for better modularity 
+		@include media(500px) {
+			max-width: 44%;
+			margin-right: 3%; 
+			
+		}
+
+	}
+
+}
+
+.content-float-wrapper {
+	@include outer-container(932px); // outer-container has clearfix
+	padding: 0 10px;	
+	& .float-col-2 {
+		@include media(600px) {
+			@include span-columns(6);
+		}
+	}
+}

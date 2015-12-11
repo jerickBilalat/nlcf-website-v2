@@ -1,0 +1,70 @@
+.hero {  
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  // own var
+  $medium-screen: em(480);
+  $hero-background-top: #7F99BE; 
+  $hero-background-bottom: #20392B;
+  $gradient-angle: 10deg;
+  $hero-image: '../images/pattern1.jpg';
+
+  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  background-color: #324766;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // override padding-bottom form 3em to none
+  // padding-bottom: 3em;
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+
+      h1 {
+        color: $heading-color;
+        // overide 1.6 to 1.8
+        font-size: 1.8em;
+        margin-bottom: 0.5em;
+
+        @include media($large-screen) {
+          // override 1.8 to 2.2
+          font-size: 2.2em;
+        }
+      }
+
+      p {
+        color: rgba(0, 0, 0, 0.8);
+        line-height: 1.4em;
+        margin: 0 auto 3em auto;
+        //own style
+        font-style: italic;
+        margin-bottom: 0; 
+
+        @include media($medium-screen) {
+          color: rgba(0, 0, 0, 0.59);
+          font-size: 1.2em;
+        }
+        // end own style
+
+        @include media($large-screen) {
+          // overrdie 1.2 to 1.5
+          font-size: 1.4em;
+          // override from 40 to 75
+          max-width: 65%;
+        }
+      }
+    }
+  }
+}
