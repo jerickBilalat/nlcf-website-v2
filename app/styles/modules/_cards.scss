@@ -19,7 +19,8 @@
   $card-margin: 1em;
   $card-image-hover-opacity: 1;
   $card-image-hover-color: #F8F2B4;
-  max-width: 445px;
+  max-width: 400px;
+  min-width: 250px;
 
   @include flex-basis(15em);
   @include flex-grow(1);
@@ -28,7 +29,7 @@
   border-radius: $base-border-radius;
   border: $card-border;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
+  // cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
 
@@ -68,7 +69,7 @@
 
   &:focus,
   &:hover {
-    cursor: pointer;
+    // cursor: pointer;
 
     img {
       opacity: $card-image-hover-opacity;

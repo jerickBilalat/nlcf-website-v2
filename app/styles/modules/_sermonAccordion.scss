@@ -24,6 +24,24 @@
     padding: 0;
   }
 
+  // style for the sermon page only, separete this in the future
+  > li {
+
+    > a {
+    }
+    
+    > a:first-child{
+      cursor: default;
+    }
+
+    > a:last-child{
+      border: 1px solid $silver;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  // end
+
   li {
     border-bottom: $accordion-menu-border;
     list-style: none;
@@ -33,6 +51,7 @@
       display: block;
       padding: $accordion-menu-list-padding;
       text-decoration: none;
+      text-align: center;
     }
 
     &:last-child {

@@ -171,8 +171,8 @@ gulp.task('default', ['clean'], () => {
     "params": {
       "Bucket": "nlcfmn.org"
       },
-      "accessKeyId": "AKIAIU7SBUHPDBMD6XSQ",
-      "secretAccessKey": "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"
+      "accessKeyId": "",
+      "secretAccessKey": ""
 };
   // create a new publisher
   var publisher = $.awspublish.create(aws);

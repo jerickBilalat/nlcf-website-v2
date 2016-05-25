@@ -28,6 +28,18 @@
     margin-bottom: $base-spacing;
   }
 
+  .footer-nav {
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    li:first-child {
+      display: block;
+      color: #000;
+    }
+  }
+
   ul {
     @include flex-basis(13em);
     @include flex-shrink(0);

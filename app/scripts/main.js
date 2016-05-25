@@ -49,35 +49,48 @@ function featureIconsAnimation() {
           if (item.hasClass('animated bounceIn')) {
             item.removeClass('animated bounceIn');
           }
-        })
+        });
 
       if (iconsArray.length > 1) {
         var elem = $(iconsArray[randomNum]);
         elem.addClass('animated bounceIn');
-      };
+      }
   return false;
 }
 
 
-function accordion() {
+function sermonAccordion() {
   $('.js-accordion-trigger').bind('click', function(e){
-    $(this).find('.accordion').find('ul').addClass('is-expanded').slideToggle('fast');
-    $(this).parent().toggleClass('is-expanded');
+    var $this = $(this),
+        downArrow = '&#8744;',
+        upArrow = '&#8743;',
+        $subMenu = $this.parent().find('ul'),
+        $testIfNotExpanded = !$subMenu.hasClass('is-expanded');
+    if($testIfNotExpanded) {
+      $subMenu.addClass('is-expanded').slideDown('fast');
+      $this.html('').html(upArrow);
+    }else {
+      $subMenu.removeClass('is-expanded').slideUp('fast');
+      $this.html('').html(downArrow);
+    }
     e.preventDefault();
   });
 }
 
 
 function loadSermon() {
-  $('.submenu a').on('click', function() {
-    var dataFile= $(this).data('file'),
-        newHtml = '../' + dataFile + '.html';
+  $('.submenu a, #js-latest-sermon').on('click', function() {
+    var dataFile = $(this).data('file'),
+        newHtml = '../' + dataFile + '.html',
+        $headerOffset = $('#js-primary-header').offset(),
+        destination = $headerOffset.top;
     $.ajax(newHtml, {
       success: function(response) {
         $('.hero-copy').html('').html(response);
+        $(document).scrollTop(destination);
       },
       error: function() {
-        alert("Unable to complete request. Please try again.")
+        console.log('Unable to complete request. Please try again.');
       }
     });
   });
@@ -86,7 +99,7 @@ function loadSermon() {
 $(document).ready(function () {
   tabs();
   navToggle();
-  setInterval(function(){featureIconsAnimation()}, 2000);
-  accordion();
+  setInterval(function(){featureIconsAnimation(); }, 2000);
+  sermonAccordion();
   loadSermon();
 });
