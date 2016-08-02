@@ -9,4 +9,4 @@
 [Version 1](https://github.com/jerickBilalat/nlcf-website-v1)
 [Version 2](https://github.com/jerickBilalat/NLCF-website-v2)
 
-**Next Step:** As of now, the website is in the process of complete reconstruction in order to make the website a single page instead of a multi page site without losing contents and overwhelming the user. The reason for the reconstruction is for a more fluid user experience where users will only load one page that displays all information efficiently. To accomplish the task, the use of modals and  AJAX will be the key to load extra contents that are not necessarily displayed on the main page.
+**Next Step:** As of now, the website is in the process of reconstruction in order to make the website from static to dynamic, adding administration and content managment. To accomplish the task, the MEAN stack is used and implemented.
